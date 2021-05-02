@@ -1,7 +1,9 @@
 package com.cihatcni.ourleague.model
 
+import android.graphics.Bitmap
+
 data class TeamResponse(
-    val data: List<Data>,
+    val data: List<Team>,
     val query: Query
 )
 
@@ -10,13 +12,14 @@ data class Query(
     val country_id: String
 )
 
-data class Data(
+data class Team(
     val common_name: String,
     val country: Country,
     val logo: String,
     val name: String,
     val short_code: String,
-    val team_id: Int
+    val team_id: Int,
+    var logoDrawable: Bitmap?
 )
 
 data class Country(

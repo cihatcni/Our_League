@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Our League</string>
+    <string name="draw_fixture">DRAW FIXTURE</string>
+    <string name="team_name_placeholder">Team Name</string>
+    <string name="team_short_name_placeholder">TEN</string>
+    <string name="team_logo_desc">Team Logo</string>
 </resources>
