@@ -1,8 +1,10 @@
 package com.cihatcni.ourleague.model
 
-data class Fixture(val weeks: List<Week>)
+import android.util.Log
+
+data class Fixture(val weeks: ArrayList<Week>)
 
 data class Match(val homeTeam: Team, val awayTeam: Team)
 
-data class Week(val matches: List<Match>)
+data class Week(val matches: ArrayList<Match>, val teams: ArrayList<Team>)
 
