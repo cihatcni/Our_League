@@ -1,7 +1,8 @@
-package com.cihatcni.ourleague
+package com.cihatcni.ourleague.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cihatcni.ourleague.R
 
 class TeamsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

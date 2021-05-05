@@ -1,8 +1,8 @@
 package com.cihatcni.ourleague.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,17 +11,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cihatcni.ourleague.activities.FixtureActivity
 import com.cihatcni.ourleague.FixtureGenerator
 import com.cihatcni.ourleague.R
-import com.cihatcni.ourleague.TeamListAdapter
+import com.cihatcni.ourleague.adapters.TeamListAdapter
 import com.cihatcni.ourleague.model.Team
 import com.cihatcni.ourleague.viewmodel.TeamListViewModel
 
 class TeamListFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = TeamListFragment()
-    }
 
     private lateinit var teamListViewModel: TeamListViewModel
     private lateinit var teamListRecyclerView: RecyclerView
@@ -49,9 +46,12 @@ class TeamListFragment : Fragment() {
     }
 
     private fun drawFixture() {
-        var steam = ArrayList<Team>()
-        teams.subList(0,6).forEach {steam.add(it); Log.v("ADDING: ","TEAM: ${it.name}")}
-        FixtureGenerator.createFixture(steam)
+        val deletedTeams = ArrayList<Team>()
+        teams.forEach {team -> if(team.name == "Besiktas JK U19" || team.name == "Besiktas (W)") deletedTeams.add(team)}
+        deletedTeams.forEach{teams.remove(it)}
+        FixtureGenerator.createFixture(teams)
+        val intent = Intent(context, FixtureActivity::class.java)
+        startActivity(intent)
     }
 
 

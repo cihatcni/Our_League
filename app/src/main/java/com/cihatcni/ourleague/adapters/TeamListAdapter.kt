@@ -1,4 +1,4 @@
-package com.cihatcni.ourleague
+package com.cihatcni.ourleague.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.cihatcni.ourleague.R
 import com.cihatcni.ourleague.model.Team
 import com.squareup.picasso.Picasso
 

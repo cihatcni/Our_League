@@ -1,9 +1,10 @@
-package com.cihatcni.ourleague
+package com.cihatcni.ourleague.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
+import com.cihatcni.ourleague.R
 
 
 class MainActivity : AppCompatActivity() {

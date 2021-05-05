@@ -13,17 +13,17 @@ object FixtureGenerator {
     lateinit var teamList: ArrayList<Team>
     var halfWeekCount: Int = 0
     var fixture: Fixture = Fixture(ArrayList())
-    const val TAG = "FixtureGenerator"
+    private const val TAG = "FixtureGenerator"
 
     fun createFixture(teams: ArrayList<Team>) {
         this.teamList = teams
         if (teams.size % 2 != 0) {
-            teamList.add(Team("Ghost", null, null, null, null, null, null))
+            teamList.add(Team("No Match", null, null, "No Match", "PASS", null, null))
             Log.v(TAG, " Ghost takım eklendi. Yeni takım sayısı: " + teams.size)
         }
         halfWeekCount = teamList.size - 1
         for (i in 0 until halfWeekCount * 2)
-            fixture.weeks.add(Week(ArrayList(), ArrayList()))
+            fixture.weeks.add(Week(ArrayList()))
         createLeague()
         printWeeks()
     }
@@ -49,7 +49,7 @@ object FixtureGenerator {
     fun printWeeks() {
         var count = 0
         for (week in fixture.weeks) {
-            Log.v(TAG, "Week $count -------------")
+            Log.v(TAG, "------------- Week $count -------------")
             for (match in week.matches)
                 Log.v(TAG, "|| " + match.homeTeam.name + " vs " + match.awayTeam.name)
             count++

@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OurLeague">
-        <activity android:name=".TeamsActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.FixtureActivity"></activity>
+        <activity android:name=".activities.TeamsActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
